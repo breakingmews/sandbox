@@ -12,11 +12,11 @@ colorlog = "*"
 faster-whisper = "*"
 
 [dev-packages]
-ruff = "*"
 coverage = "*"
 flake8 = "*"
 mypy = "*"
 pre-commit = "*"
+ruff = "*"
 yamllint = "*"
 
 [requires]
