@@ -11,5 +11,5 @@ services:
     volumes:
       - ./logs:/app/logs
       - ./data:/app/data
-    command: ["pipenv", "run", "transcribe", "./data/audio", "./data/transcriptions"]
+    command: ["pipenv", "run", "transcribe", "./data/audio", "./data/transcription"]
     
