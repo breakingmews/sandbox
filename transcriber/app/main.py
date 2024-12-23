@@ -5,6 +5,7 @@ import os
 import utils
 from argparser import parse_args
 from setting import settings
+from transcriber import transcriber_
 
 args = parse_args()
 root_logger = logging.getLogger()
@@ -27,7 +28,7 @@ def transcribe(
 
     for filepath in filepaths:
         try:
-            transcription = ""  # transcriber_.transcribe(filepath)
+            transcription = transcriber_.transcribe(filepath)
             destination = utils.get_destnation(input_dir, output_dir, filepath)
             utils.write(destination, transcription)
         except Exception as e:

@@ -38,7 +38,7 @@ docker build -t transcriber .
 
 Run with default directories
 ```sh
-docker run -t --rm \
+docker run -d -t --rm \
   --name transcriber \
   -p 8000:8000 \
   --mount type=bind,source="$(pwd)"/logs,target=/app/logs \
@@ -49,7 +49,7 @@ docker run -t --rm \
 or specify input and output directories
 
 ```sh
-docker run -t --rm \
+docker run -d -t --rm \
   --name transcriber \
   -p 8000:8000 \
   --mount type=bind,source="$(pwd)"/logs,target=/app/logs \
@@ -62,14 +62,18 @@ docker run -t --rm \
 Build and start the services:
 
 ```sh
-docker compose up
+docker compose up -d
 ```
 
 or
 ```sh
-docker compose run app pipenv run transcribe /input /output
+docker compose run -d app pipenv run transcribe /input /output
 ```
 
 
 ## Logging
 Logs are stored in the /app/logs directory inside the container. You can mount a host directory to this path to persist logs.
+
+```sh
+tail -f logs/log
+```

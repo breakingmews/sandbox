@@ -42,7 +42,7 @@ class Settings:
         "loggers": {
             "": {  # root logger
                 "handlers": ["console", "file"],
-                "level": "DEBUG",
+                "level": "INFO",
             },
             "uvicorn": {
                 "handlers": ["console", "file"],
