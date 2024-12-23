@@ -3,7 +3,7 @@ from datetime import datetime
 
 import whisper
 
-folder = "/home/nastya/Audio/Самогипноз"
+folder = "/home/Audio/"
 filenames = os.listdir(folder)
 filepath = os.path.join(folder, filenames[0])
 print(filepath)
