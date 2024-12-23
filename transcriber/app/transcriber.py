@@ -8,8 +8,9 @@ _log = logging.getLogger(__name__)
 
 
 class Transcriber:
-    def __init__(self):
-        self.model = WhisperModel(settings.model_size)
+    def __init__(self, model_size=settings.model_size):
+        _log.info(f"Using model: {model_size}")
+        self.model = WhisperModel(model_size)
 
     def transcribe(self, filepath):
         start = datetime.now()
@@ -29,6 +30,3 @@ class Transcriber:
         _log.info(f"Duration: {duration}")
 
         return text
-
-
-transcriber_ = Transcriber()

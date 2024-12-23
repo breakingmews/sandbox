@@ -14,7 +14,8 @@ pip install pipenv
 1. Copy all audio files to `transcriber/data/audio/`. Recursive traversing of directories supported.
 2. Run with [docker compose](#run-with-docker-compose)
 
-## Default directories
+## Defaults
+- model-size: `tiny` (lowest quality)
 - input: `./data/audio`
 - output: `./data/transcription`
 
@@ -28,7 +29,7 @@ pipenv run transcribe
 Transcribe specifying input and output directories:
 
 ```sh
-pipenv run transcribe /input /output
+pipenv run transcribe --model-size=base /input /output
 ```
 
 ## Run in Docker
@@ -36,7 +37,7 @@ pipenv run transcribe /input /output
 docker build -t transcriber .
 ```
 
-Run with default directories
+Run with defaultsettings
 ```sh
 docker run -d -t --rm \
   --name transcriber \
@@ -46,7 +47,7 @@ docker run -d -t --rm \
   transcriber 
 ```
 
-or specify input and output directories
+or specify model size, input and output directories
 
 ```sh
 docker run -d -t --rm \
@@ -54,7 +55,7 @@ docker run -d -t --rm \
   -p 8000:8000 \
   --mount type=bind,source="$(pwd)"/logs,target=/app/logs \
   --mount type=bind,source="$(pwd)"/data,target=/app/data \
-  transcriber pipenv run transcribe /input /output
+  transcriber pipenv run transcribe --model-size=large /input /output
 ```
 
 
@@ -67,7 +68,7 @@ docker compose up -d
 
 or
 ```sh
-docker compose run -d app pipenv run transcribe /input /output
+docker compose run -d app pipenv run transcribe --model-size=large /input /output
 ```
 
 

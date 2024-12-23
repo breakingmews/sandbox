@@ -5,7 +5,7 @@ import os
 import utils
 from argparser import parse_args
 from setting import settings
-from transcriber import transcriber_
+from transcriber import Transcriber
 
 args = parse_args()
 root_logger = logging.getLogger()
@@ -35,4 +35,5 @@ def transcribe(
             _log.error("Error transcribing %s: %s" % (filepath, e), stack_info=True)
 
 
+transcriber_ = Transcriber(model_size=args.model_size)
 transcribe(input_dir=args.input_dir, output_dir=args.output_dir)

@@ -28,6 +28,35 @@ def parse_args() -> Namespace:
         help=f"Directory to write transcriptions to (default: {settings.transcription})",
     )
 
+    parser.add_argument(
+        "--model-size",
+        dest="model_size",
+        type=str,
+        required=False,
+        choices=[
+            "tiny.en",
+            "tiny",
+            "base.en",
+            "base",
+            "small.en",
+            "small",
+            "medium.en",
+            "medium",
+            "large-v1",
+            "large-v2",
+            "large-v3",
+            "large",
+            "distil-large-v2",
+            "distil-medium.en",
+            "distil-small.en",
+            "distil-large-v3",
+            "large-v3-turbo",
+            "turbo",
+        ],
+        default=settings.model_size,
+        help=f"Model size (default: {settings.model_size})",
+    )
+
     args = parser.parse_args()
 
     os.path.exists(args.input_dir) or parser.error(
