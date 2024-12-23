@@ -9,7 +9,12 @@ pip install pipenv
 
 # Usage
 
-Default directories:
+## Easiest ☕ 
+
+1. Copy all audio files to `transcriber/data/audio/`. Recursive traversing of directories supported.
+2. Run with [docker compose](#run-with-docker-compose)
+
+## Default directories
 - input: `./data/audio`
 - output: `./data/transcription`
 
@@ -57,12 +62,12 @@ docker run -t --rm \
 Build and start the services:
 
 ```sh
-docker-compose up
+docker compose up
 ```
 
 or
 ```sh
-docker-compose run app pipenv run transcribe /input /output
+docker compose run app pipenv run transcribe /input /output
 ```
 
 
