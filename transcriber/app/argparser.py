@@ -11,6 +11,8 @@ def parse_args() -> Namespace:
         "-v", dest="verbose", action="store_true", help="verbose output"
     )
 
+    # TODO add model size
+
     parser.add_argument(
         "input_dir",
         type=str,
@@ -22,8 +24,8 @@ def parse_args() -> Namespace:
         "output_dir",
         type=str,
         nargs="?",
-        default=settings.transcriptions,
-        help=f"Directory to write transcriptions to (default: {settings.transcriptions})",
+        default=settings.transcription,
+        help=f"Directory to write transcriptions to (default: {settings.transcription})",
     )
 
     args = parser.parse_args()

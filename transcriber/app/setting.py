@@ -2,7 +2,7 @@ class Settings:
     model_size = "tiny"
 
     audio = "./data/audio/"
-    transcriptions = "./data/transcription/"
+    transcription = "./data/transcription/"
 
     logging = {
         "version": 1,

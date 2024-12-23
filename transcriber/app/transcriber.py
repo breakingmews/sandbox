@@ -18,9 +18,11 @@ class Transcriber:
         segments, info = self.model.transcribe(filepath, beam_size=5)
 
         text = ""
-        # for segment in segments:
-        #     _log.debug("[%.2fs - %.2fs] %s" % (segment.start, segment.end, segment.text))
-        #     text += segment.text + " "
+        for segment in segments:
+            _log.debug(
+                "[%.2fs - %.2fs] %s" % (segment.start, segment.end, segment.text)
+            )
+            text += segment.text + " "
 
         end = datetime.now()
         duration = end - start
