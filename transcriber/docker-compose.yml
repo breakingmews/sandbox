@@ -1,0 +1,15 @@
+---
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+    container_name: transcriber
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+    command: ["pipenv", "run", "transcribe", "./data/audio", "./data/transcriptions"]
+    
