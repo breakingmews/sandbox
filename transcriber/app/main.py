@@ -11,6 +11,5 @@ root_logger.setLevel(logging.DEBUG if args.verbose else logging.INFO)
 
 logging.config.dictConfig(settings.logging)  # type: ignore[arg-type]
 
-
 transcriber_ = Transcriber(model_size=args.model_size)
 transcriber_.transcribe_files(input_dir=args.input_dir, output_dir=args.output_dir)

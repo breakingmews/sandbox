@@ -12,4 +12,3 @@ services:
       - ./logs:/app/logs
       - ./data:/app/data
     command: ["pipenv", "run", "transcribe", "./data/audio", "./data/transcription"]
-    

@@ -11,8 +11,6 @@ def parse_args() -> Namespace:
         "-v", dest="verbose", action="store_true", help="verbose output"
     )
 
-    # TODO add model size
-
     parser.add_argument(
         "input_dir",
         type=str,
