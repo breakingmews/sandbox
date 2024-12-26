@@ -11,4 +11,4 @@ services:
     volumes:
       - ./logs:/app/logs
       - ./data:/app/data
-    command: ["pipenv", "run", "transcribe", "./data/audio", "./data/transcription"]
+    command: ["pipenv", "run", "transcribe", "./data/audio", "./data/transcription"] # yamllint disable-line rule:line-length

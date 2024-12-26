@@ -1,0 +1,22 @@
+{
+    "steps": [{
+        "name": "Fix",
+        "command": "pipenv run fix"
+    },
+    {
+        "name": "Format",
+        "command": "pipenv run format"
+    },
+    {
+        "name": "Stylecheck",
+        "command": "pipenv run stylecheck"
+    },
+    {
+        "name": "Typecheck",
+        "command": "pipenv run typecheck"
+    },
+    {
+        "name": "Yamllint",
+        "command": "pipenv run yamllint"
+    }]
+}

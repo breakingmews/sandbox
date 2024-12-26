@@ -14,7 +14,7 @@ class Transcriber:
         _log.info(f"Using model: {model_size}")
         self.model = WhisperModel(model_size)
 
-    def transcribe(self, filepath)->str:
+    def transcribe(self, filepath) -> str:
         start = datetime.now()
         _log.info("Transcribing %s" % filepath)
 
