@@ -27,8 +27,8 @@ def parse_args() -> Namespace:
     )
 
     parser.add_argument(
-        "--model-size",
-        dest="model_size",
+        "--model",
+        dest="model",
         type=str,
         required=False,
         choices=[
@@ -51,8 +51,8 @@ def parse_args() -> Namespace:
             "large-v3-turbo",
             "turbo",
         ],
-        default=settings.model_size,
-        help=f"Model size (default: {settings.model_size})",
+        default=settings.model,
+        help=f"Model (default: {settings.model})",
     )
 
     args = parser.parse_args()

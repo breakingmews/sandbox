@@ -1,5 +1,5 @@
 class Settings:
-    model_size = "tiny"
+    model = "medium"
 
     audio = "./data/audio/"
     transcription = "./data/transcription/"

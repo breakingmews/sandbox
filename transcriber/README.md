@@ -15,7 +15,7 @@ pip install pipenv
 2. Run with [docker compose](#run-with-docker-compose)
 
 ## Defaults
-- model-size: `tiny` (lowest quality)
+- model: `tiny` (lowest quality)
 - input: `./data/audio`
 - output: `./data/transcription`
 
@@ -29,7 +29,7 @@ pipenv run transcribe
 Transcribe specifying input and output directories:
 
 ```sh
-pipenv run transcribe --model-size=base /input /output
+pipenv run transcribe --model=base /input /output
 ```
 
 ## Run in Docker
@@ -55,7 +55,7 @@ docker run -d -t --rm \
   -p 8000:8000 \
   --mount type=bind,source="$(pwd)"/logs,target=/app/logs \
   --mount type=bind,source="$(pwd)"/data,target=/app/data \
-  transcriber pipenv run transcribe --model-size=large /input /output
+  transcriber pipenv run transcribe --model=large /input /output
 ```
 
 
@@ -68,7 +68,7 @@ docker compose up -d
 
 or
 ```sh
-docker compose run -d app pipenv run transcribe --model-size=large /input /output
+docker compose run -d app pipenv run transcribe --model=large /input /output
 ```
 
 
