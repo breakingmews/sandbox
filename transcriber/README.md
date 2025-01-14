@@ -37,7 +37,7 @@ pipenv run transcribe --model=base /input /output
 docker build -t transcriber .
 ```
 
-Run with defaultsettings
+Run with default settings
 ```sh
 docker run -d -t --rm \
   --name transcriber \
